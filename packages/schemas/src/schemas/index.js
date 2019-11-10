@@ -1,13 +1,14 @@
-import definition from './definition.json';
-import api from './api.json';
-import field from './field.json';
-import form from './form.json';
-import layout from './layout.json';
-import list from './list.json';
-import localization from './localization.json';
-import messages from './messages.json';
-import resource from './resource.json';
-import routes from './routes.json';
-import type from './type.json';
-
-export { definition, api, field, form, layout, list, localization, messages, resource, routes, type };
+export { default as definition } from './definition.json';
+export { default as api } from './api.json';
+export { default as field } from './field.json';
+export { default as form } from './form.json';
+export { default as layout } from './layout.json';
+export { default as list } from './list.json';
+export { default as localization } from './localization.json';
+export { default as messages } from './messages.json';
+// export { default as resource } from './resource.json';
+export { default as routes } from './routes.json';
+export { default as type } from './type.json';
+export { default as lists } from './lists.json';
+export { default as forms } from './forms.json';
+export * as resources from './resources/index';

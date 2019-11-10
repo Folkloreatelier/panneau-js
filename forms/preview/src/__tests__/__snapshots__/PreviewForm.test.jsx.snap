@@ -146,9 +146,7 @@ exports[`match snapshot 1`] = `
               onClick={[Function]}
               type="button"
             >
-              <span>
-                Save
-              </span>
+              Save
             </button>
           </div>
         </div>

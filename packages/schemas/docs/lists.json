@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://panneau.dev/schemas/lists.json",
+    "title": "Lists definition",
+    "description": "Definition for a lists",
+    "type": "object",
+
+    "oneOf": [
+        {
+            "$ref": "list.json"
+        },
+        {
+            "patternProperties": {
+                "^(index)$": {
+                    "$ref": "list.json"
+                }
+            },
+            "additionalProperties": false
+        }
+    ]
+}

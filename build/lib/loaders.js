@@ -62,9 +62,11 @@ const postCssLoader = {
 const sassLoader = {
     loader: require.resolve('sass-loader'),
     options: {
-        includePaths: [
-            ...getResolveModules(),
-        ],
+        sassOptions: {
+            includePaths: [
+                ...getResolveModules(),
+            ],
+        },
         sourceMap: shouldUseSourceMap,
     },
 };

@@ -14,11 +14,21 @@
     },
     "overrides": [
         {
-            "files": ["*.config.js", "build/**", ".storybook/**", ".storybook-package/**", "packages/*/scripts/**"],
+            "files": [
+                "*.config.js",
+                "build/**",
+                ".storybook/**",
+                ".storybook-package/**",
+                "packages/*/scripts/**",
+                "**/__tests__/**"
+            ],
             "rules": {
-                "import/no-extraneous-dependencies": ["error", {
-                    "devDependencies": true
-                }],
+                "import/no-extraneous-dependencies": [
+                    "error",
+                    {
+                        "devDependencies": true
+                    }
+                ],
                 "global-require": 0,
                 "import/no-dynamic-require": 0,
                 "no-console": 0

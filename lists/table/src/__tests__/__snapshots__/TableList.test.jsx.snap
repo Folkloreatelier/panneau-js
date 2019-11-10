@@ -2,10 +2,10 @@
 
 exports[`match snapshot 1`] = `
 <div
-  className="undefined"
+  className=""
 >
   <div
-    className="undefined"
+    className=""
   >
     <table
       className="table table-sm table-hover"
@@ -35,9 +35,7 @@ exports[`match snapshot 1`] = `
             <div
               className="well well-sm text-center"
             >
-              <span>
-                No items
-              </span>
+              No items
             </div>
           </td>
         </tr>

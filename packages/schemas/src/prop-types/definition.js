@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import localization from './localization';
 import api from './api';
 import layout from './layout';
-import resource from './resource';
+import resource from './resources/resource';
 import field from './field';
 import type from './type';
 

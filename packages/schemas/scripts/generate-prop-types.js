@@ -9,16 +9,18 @@ const isArray = require('lodash/isArray');
 const isObject = require('lodash/isObject');
 const get = require('lodash/get');
 const colors = require('colors');
+const changeCase = require('change-case');
 
 const prettierConfig = require('../../../.prettierrc.json');
 
 const srcDir = path.join(__dirname, '../src');
 const destDir = path.join(__dirname, '../src/prop-types');
-const files = glob.sync(path.join(srcDir, 'schemas/*.json'));
+const schemasDir = path.join(srcDir, 'schemas');
+const files = glob.sync(path.join(schemasDir, './**/*.json'));
 const schemas = files.reduce(
     (map, file) => ({
         ...map,
-        [path.basename(file, '.json')]: require(file),
+        [path.relative(schemasDir, file).replace(/\.json/, '')]: require(file),
     }),
     {},
 );
@@ -145,7 +147,11 @@ const getImportsFromSchema = schema => {
         refs.forEach(ref => {
             const matches = ref.match(/(.*?\/)?([^/]+)\.json$/);
             if (matches !== null && matches[2] !== schemaName) {
-                imports.push(`import ${matches[2]} from './${matches[2]}';`);
+                imports.push(
+                    `import ${matches[2]} from '${
+                        matches[0].match(/^\.\./) ? '' : './'
+                    }${matches[0].replace(/\.json$/, '')}';`,
+                );
             }
         });
     });
@@ -183,12 +189,19 @@ Object.keys(propTypesFiles).forEach(name => {
 });
 
 console.log(colors.yellow('Writing index file...'));
+const importToFiles = Object.keys(propTypesFiles).reduce(
+    (map, name) => ({
+        ...map,
+        [changeCase.camel(name)]: name,
+    }),
+    {},
+);
 const indexOutput = `
-    ${Object.keys(propTypesFiles)
-        .map(name => `import ${name} from './${name}';`)
+    ${Object.keys(importToFiles)
+        .map(name => `import ${name} from './${importToFiles[name]}';`)
         .join('\n')}
 
-    export {${Object.keys(propTypesFiles).join(',')}};
+    export {${Object.keys(importToFiles).join(',')}};
 `;
 const indexPrettyOutput = prettier.format(indexOutput, {
     parser: 'babel',

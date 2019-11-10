@@ -3,8 +3,5 @@ import field from './field';
 
 export default PropTypes.shape({
     type: PropTypes.string.isRequired,
-    fields: PropTypes.oneOfType([
-        PropTypes.arrayOf(field),
-        PropTypes.objectOf(PropTypes.arrayOf(field)),
-    ]),
+    fields: PropTypes.arrayOf(field),
 });

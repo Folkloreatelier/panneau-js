@@ -71,8 +71,8 @@
         "prop-types": "^15.7.0"
     },
     "devDependencies": {
-        "react": "^16.9.0",
-        "react-dom": "^16.9.0"
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0"
     },
     "peerDependencies": {
         "react": "^16.8.0",

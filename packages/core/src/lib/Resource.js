@@ -46,8 +46,14 @@ class Resource {
         return forms;
     }
 
-    form(action) {
+    form(action, type = null) {
         const forms = this.forms();
+        if (type !== null && typeof forms[type] !== 'undefined') {
+            return forms[type][action] || forms[type];
+        }
+        if (type !== null && typeof forms.default !== 'undefined') {
+            return forms.default[action] || forms.default;
+        }
         return forms[action] || forms;
     }
 

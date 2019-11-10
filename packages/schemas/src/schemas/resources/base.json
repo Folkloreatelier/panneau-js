@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://panneau.dev/schemas/resource.json",
-    "title": "Resource definition",
-    "description": "Definition for a resource",
+    "$id": "http://panneau.dev/schemas/resources/base.json",
+    "title": "Base resource definition",
+    "description": "Definition for a base resource",
     "type": "object",
     "properties": {
         "id": {
@@ -24,33 +24,18 @@
 
         "lists": {
             "description": "The resource lists definition",
-            "$ref": "list.json",
-            "patternProperties": {
-                "^(index)$": {
-                    "$ref": "list.json"
-                }
-            }
-        },
-
-        "forms": {
-            "description": "The resource forms definition",
-            "$ref": "form.json",
-            "patternProperties": {
-                "^(create|edit)$": {
-                    "$ref": "form.json"
-                }
-            }
+            "$ref": "../lists.json"
         },
 
         "messages": {
             "description": "The resource translations messages",
-            "$ref": "messages.json"
+            "$ref": "../messages.json"
         },
 
         "routes": {
             "allOf": [
                 {
-                    "$ref": "routes.json"
+                    "$ref": "../routes.json"
                 },
                 {
                     "required": [
@@ -66,24 +51,5 @@
                 }
             ]
         }
-    },
-
-    "allOf": [
-        {
-            "if": {
-                "properties": { "type": { "const": "typed" } }
-            },
-            "then": {
-                "properties": {
-                    "types": {
-                        "description": "The resource types",
-                        "type": "array",
-                        "items": {
-                            "$ref": "type.json"
-                        }
-                    }
-                }
-            }
-        }
-    ]
+    }
 }

@@ -155,22 +155,11 @@ class SelectField extends Component {
         this.importCanceled = false;
 
         this.state = {
-            options: props.options,
             newOptions: [],
             loadedOptions: [],
             inputValue: '',
             menuIsOpen: false,
         };
-    }
-
-    componentWillReceiveProps({ options: nextOptions }) {
-        const { options } = this.props;
-        const optionsChanged = options !== nextOptions;
-        if (optionsChanged) {
-            this.setState({
-                options: nextOptions,
-            });
-        }
     }
 
     componentWillUnmount() {
@@ -273,8 +262,8 @@ class SelectField extends Component {
     }
 
     getOptions() {
-        const { cannotBeEmpty, addEmptyOption, emptyOption } = this.props;
-        const { options, newOptions } = this.state;
+        const { options, cannotBeEmpty, addEmptyOption, emptyOption } = this.props;
+        const { newOptions } = this.state;
         const selectOptions = [].concat(options).concat(newOptions);
         if (!cannotBeEmpty && addEmptyOption) {
             selectOptions.unshift(emptyOption);

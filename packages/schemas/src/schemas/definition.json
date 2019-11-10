@@ -70,7 +70,7 @@
             "description": "The resources of the administration panel",
             "type": "array",
             "items": {
-                "$ref": "resource.json"
+                "$ref": "resources/resource.json"
             },
             "minItems": 1,
             "uniqueItems": true

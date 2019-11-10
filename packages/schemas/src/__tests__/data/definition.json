@@ -149,11 +149,11 @@
                 "destroy":"/pages/:id"
             },
             "forms": {
-                "type": "preview",
-                "fullscreen": true,
-                "preview": "json",
-                "fields": {
-                    "home": [
+                "home": {
+                    "type": "preview",
+                    "fullscreen": true,
+                    "preview": "json",
+                    "fields": [
                         {
                             "name": "data.title",
                             "type": "text_locale",
@@ -164,8 +164,13 @@
                             "type": "blocks",
                             "label": "Blocks"
                         }
-                    ],
-                    "base": [
+                    ]
+                },
+                "base": {
+                    "type": "preview",
+                    "fullscreen": true,
+                    "preview": "json",
+                    "fields": [
                         {
                             "name": "data.title",
                             "type": "text_locale",

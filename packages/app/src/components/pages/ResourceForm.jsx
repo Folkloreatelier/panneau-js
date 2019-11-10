@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import isObject from 'lodash/isObject';
 import classNames from 'classnames';
 import { defineMessages } from 'react-intl';
 import { PropTypes as PanneauPropTypes, useResourceApi } from '@panneau/core';
@@ -250,19 +249,11 @@ const ResourceForm = ({
 
     // Get form definition
     const { type: formType = null, fullscreen, className = null, ...formProps } = useMemo(() => {
-        const { fields = [], ...form } = resource.form(action);
-        let finalFields;
-        if (waitingItem) {
-            finalFields = null;
-        } else if (currentType !== null && isObject(fields)) {
-            finalFields = fields[currentType.id] || fields.default || fields;
-        } else {
-            finalFields = fields;
-        }
+        const { fields = [], ...form } = resource.form(action, currentType !== null ? currentType.id : null);
         return {
             type: 'normal',
             fullscreen: false,
-            fields: finalFields,
+            fields: !waitingItem ? fields : null,
             ...form,
         };
     }, [waitingItem, resource, currentType]);

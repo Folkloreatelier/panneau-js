@@ -12,15 +12,9 @@
         },
         "fields": {
             "description": "The fields of the form",
-            "type": ["array", "object"],
+            "type": "array",
             "items": {
                 "$ref": "field.json"
-            },
-            "additionalProperties": {
-                "type": "array",
-                "items": {
-                    "$ref": "field.json"
-                }
             }
         }
     }

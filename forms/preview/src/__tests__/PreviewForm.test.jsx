@@ -3,21 +3,19 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 /* eslint-enable import/no-extraneous-dependencies */
 import { IntlProvider } from 'react-intl';
+import { ComponentsCollection } from '@panneau/core';
+import { ComponentsProvider } from '@panneau/core/contexts';
 
-import withFieldsCollection from '../../../../fields/fields/src/withFieldsCollection';
-import withPreviewsCollection from '../../../../previews/previews/src/withPreviewsCollection';
-import withFormsCollection from '../../../forms/src/withFormsCollection';
+import * as FieldsComponents from '../../../../fields/fields/src/index';
+import * as PreviewsComponents from '../../../../previews/previews/src/index';
+import * as FormsComponents from '../../../forms/src/index';
+
 import PreviewForm from '../PreviewForm';
 
-const PreviewFormWithFields = withFieldsCollection({
-    childContext: true,
-})(PreviewForm);
-const PreviewFormWithForms = withFormsCollection({
-    childContext: true,
-})(PreviewFormWithFields);
-const PreviewFormWithPreviews = withPreviewsCollection({
-    childContext: true,
-})(PreviewFormWithForms);
+const componentsCollection = new ComponentsCollection();
+componentsCollection.addComponents(FieldsComponents, 'fields');
+componentsCollection.addComponents(PreviewsComponents, 'previews');
+componentsCollection.addComponents(FormsComponents, 'forms');
 
 const fields = [
     {
@@ -32,14 +30,13 @@ const value = {
 };
 
 test('match snapshot', () => {
-    const component = renderer.create((
-        <IntlProvider locale="en">
-            <PreviewFormWithPreviews
-                fields={fields}
-                value={value}
-            />
-        </IntlProvider>
-    ));
+    const component = renderer.create(
+        <ComponentsProvider collection={componentsCollection}>
+            <IntlProvider locale="en">
+                <PreviewForm fields={fields} value={value} />
+            </IntlProvider>
+        </ComponentsProvider>,
+    );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 });

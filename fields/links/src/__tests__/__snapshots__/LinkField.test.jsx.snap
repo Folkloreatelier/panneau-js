@@ -38,9 +38,7 @@ exports[`match snapshot 1`] = `
               className="control-label"
               htmlFor={null}
             >
-              <span>
-                URL
-              </span>
+              URL
             </label>
           </div>
           <div
@@ -93,9 +91,7 @@ exports[`match snapshot 1`] = `
               className="control-label"
               htmlFor={null}
             >
-              <span>
-                Label
-              </span>
+              Label
             </label>
           </div>
           <div

@@ -25,21 +25,15 @@ exports[`match snapshot 1`] = `
     <div
       className=""
     >
-      <div
-        className="btn-group"
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        title={null}
+        type="button"
       >
-        <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          className="btn btn-primary"
-          onClick={[Function]}
-          type="button"
-        >
-          <span>
-            Add
-          </span>
-        </button>
-      </div>
+        Add
+      </button>
     </div>
     <div>
       <div

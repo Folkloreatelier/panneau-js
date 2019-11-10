@@ -69,16 +69,16 @@
         "popper.js": "^1.14.3",
         "prop-types": "^15.7.0",
         "query-string": "^6.1.0",
-        "react-intl": "^3.1.6",
-        "react-router-dom": "^5.0.1",
+        "react-intl": "^3.4.0",
+        "react-router-dom": "^5.1.2",
         "url-pattern": "^1.0.3",
         "whatwg-fetch": "^2.0.3",
         "wolfy87-eventemitter": "^5.2.4"
     },
     "devDependencies": {
         "jquery-slim": "^3.0.0",
-        "react": "^16.9.0",
-        "react-dom": "^16.9.0"
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0"
     },
     "peerDependencies": {
         "react": "^16.8.0",

@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://panneau.dev/schemas/resources/typed.json",
+    "title": "Typed resource definition",
+    "description": "Definition for a typed resource",
+    "type": "object",
+
+    "allOf": [
+        {
+            "$ref": "base.json"
+        },
+        {
+            "properties": {
+                "type": {
+                    "const": "typed"
+                },
+                "types": {
+                    "description": "The resource types",
+                    "type": "array",
+                    "required": true,
+                    "items": {
+                        "$ref": "../type.json"
+                    }
+                },
+                "forms": {
+                    "oneOf": [
+                        {
+                            "$ref": "../forms.json"
+                        },
+                        {
+                            "additionalProperties": {
+                                "$ref": "../forms.json"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

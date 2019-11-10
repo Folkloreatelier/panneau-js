@@ -26,19 +26,19 @@ exports[`SelectField match snapshot 1`] = `
       style={null}
     >
       <div
-        className="css-10nd86i"
+        className=" css-2b097c-container"
         onKeyDown={[Function]}
       >
         <div
-          className="css-vj8t7z"
+          className=" css-yk16xz-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className="css-1hwfws3"
+            className=" css-1hwfws3"
           >
             <div
-              className="css-xp4uvy"
+              className=" css-1uccc91-singleValue"
             >
               Option 1
             </div>
@@ -71,6 +71,7 @@ exports[`SelectField match snapshot 1`] = `
                       "boxSizing": "content-box",
                       "color": "inherit",
                       "fontSize": "inherit",
+                      "label": "input",
                       "opacity": 1,
                       "outline": 0,
                       "padding": 0,
@@ -100,11 +101,11 @@ exports[`SelectField match snapshot 1`] = `
             </div>
           </div>
           <div
-            className="css-1wy0on6"
+            className=" css-1wy0on6"
           >
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -122,11 +123,11 @@ exports[`SelectField match snapshot 1`] = `
               </svg>
             </div>
             <span
-              className="css-d8oujb"
+              className=" css-1okebmr-indicatorSeparator"
             />
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -177,19 +178,19 @@ exports[`SelectField match snapshot 2`] = `
       style={null}
     >
       <div
-        className="css-10nd86i"
+        className=" css-2b097c-container"
         onKeyDown={[Function]}
       >
         <div
-          className="css-vj8t7z"
+          className=" css-yk16xz-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className="css-1hwfws3"
+            className=" css-1hwfws3"
           >
             <div
-              className="css-xp4uvy"
+              className=" css-1uccc91-singleValue"
             >
               Option 1
             </div>
@@ -222,6 +223,7 @@ exports[`SelectField match snapshot 2`] = `
                       "boxSizing": "content-box",
                       "color": "inherit",
                       "fontSize": "inherit",
+                      "label": "input",
                       "opacity": 1,
                       "outline": 0,
                       "padding": 0,
@@ -251,11 +253,11 @@ exports[`SelectField match snapshot 2`] = `
             </div>
           </div>
           <div
-            className="css-1wy0on6"
+            className=" css-1wy0on6"
           >
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -273,11 +275,11 @@ exports[`SelectField match snapshot 2`] = `
               </svg>
             </div>
             <span
-              className="css-d8oujb"
+              className=" css-1okebmr-indicatorSeparator"
             />
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -328,19 +330,19 @@ exports[`SelectField match snapshot 3`] = `
       style={null}
     >
       <div
-        className="css-10nd86i"
+        className=" css-2b097c-container"
         onKeyDown={[Function]}
       >
         <div
-          className="css-vj8t7z"
+          className=" css-yk16xz-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className="css-1hwfws3"
+            className=" css-1hwfws3"
           >
             <div
-              className="css-xp4uvy"
+              className=" css-1uccc91-singleValue"
             >
               Option 1
             </div>
@@ -373,6 +375,7 @@ exports[`SelectField match snapshot 3`] = `
                       "boxSizing": "content-box",
                       "color": "inherit",
                       "fontSize": "inherit",
+                      "label": "input",
                       "opacity": 1,
                       "outline": 0,
                       "padding": 0,
@@ -402,11 +405,11 @@ exports[`SelectField match snapshot 3`] = `
             </div>
           </div>
           <div
-            className="css-1wy0on6"
+            className=" css-1wy0on6"
           >
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -424,11 +427,11 @@ exports[`SelectField match snapshot 3`] = `
               </svg>
             </div>
             <span
-              className="css-d8oujb"
+              className=" css-1okebmr-indicatorSeparator"
             />
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -479,19 +482,19 @@ exports[`SelectField match snapshot 4`] = `
       style={null}
     >
       <div
-        className="css-10nd86i"
+        className=" css-2b097c-container"
         onKeyDown={[Function]}
       >
         <div
-          className="css-vj8t7z"
+          className=" css-yk16xz-control"
           onMouseDown={[Function]}
           onTouchEnd={[Function]}
         >
           <div
-            className="css-1hwfws3"
+            className=" css-1hwfws3"
           >
             <div
-              className="css-xp4uvy"
+              className=" css-1uccc91-singleValue"
             >
               Option 1
             </div>
@@ -524,6 +527,7 @@ exports[`SelectField match snapshot 4`] = `
                       "boxSizing": "content-box",
                       "color": "inherit",
                       "fontSize": "inherit",
+                      "label": "input",
                       "opacity": 1,
                       "outline": 0,
                       "padding": 0,
@@ -553,11 +557,11 @@ exports[`SelectField match snapshot 4`] = `
             </div>
           </div>
           <div
-            className="css-1wy0on6"
+            className=" css-1wy0on6"
           >
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >
@@ -575,11 +579,11 @@ exports[`SelectField match snapshot 4`] = `
               </svg>
             </div>
             <span
-              className="css-d8oujb"
+              className=" css-1okebmr-indicatorSeparator"
             />
             <div
               aria-hidden="true"
-              className="css-1ep9fjw"
+              className=" css-tlfecz-indicatorContainer"
               onMouseDown={[Function]}
               onTouchEnd={[Function]}
             >

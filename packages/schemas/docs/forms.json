@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://panneau.dev/schemas/forms.json",
+    "title": "Forms definition",
+    "description": "Definition for a forms",
+    "type": "object",
+
+    "oneOf": [
+        {
+            "$ref": "form.json"
+        },
+        {
+            "patternProperties": {
+                "^(create|edit)$": {
+                    "$ref": "form.json"
+                }
+            },
+            "additionalProperties": false
+        }
+    ]
+}

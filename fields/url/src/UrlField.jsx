@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import { FormGroup } from '@panneau/field';
@@ -23,57 +24,38 @@ const defaultProps = {
     onChange: null,
 };
 
-class UrlField extends Component {
-    constructor(props) {
-        super(props);
+const UrlField = ({ label, name, value, schemes, onChange, ...other }) => {
+    const url = useMemo(
+        () =>
+            new Url({
+                schemes,
+            }),
+        [schemes],
+    );
+    const scheme = useMemo(() => url.getScheme(value), [url, value]);
+    const valueWithoutScheme = useMemo(() => url.removeScheme(value), [url, value]);
 
-        this.onChange = this.onChange.bind(this);
+    const onFieldChange = useCallback(
+        newValue => {
+            const valueWithScheme = !isEmpty(newValue) ? url.withScheme(newValue, scheme) : '';
+            if (onChange !== null) {
+                onChange(valueWithScheme);
+            }
+        },
+        [onChange, url, scheme],
+    );
 
-        this.url = new Url({
-            schemes: props.schemes,
-        });
-
-        this.state = {
-            scheme: this.url.getScheme(props.value),
-        };
-    }
-
-    componentWillReceiveProps({ value: nextValue }) {
-        const { value } = this.props;
-        const valueChanged = nextValue !== value;
-        if (valueChanged) {
-            this.setState({
-                scheme: this.url.getScheme(nextValue),
-            });
-        }
-    }
-
-    onChange(value) {
-        const { onChange } = this.props;
-        const { scheme } = this.state;
-        if (onChange !== null) {
-            onChange(!isEmpty(value) ? this.url.withScheme(value, scheme) : '');
-        }
-    }
-
-    render() {
-        const {
-            label, name, value, ...other
-        } = this.props;
-        const { scheme } = this.state;
-
-        return (
-            <FormGroup className="form-group-url" name={name} label={label} {...other}>
-                <TextField
-                    inputOnly
-                    prefix={scheme}
-                    value={this.url.removeScheme(value)}
-                    onChange={this.onChange}
-                />
-            </FormGroup>
-        );
-    }
-}
+    return (
+        <FormGroup className="form-group-url" name={name} label={label} {...other}>
+            <TextField
+                inputOnly
+                prefix={scheme}
+                value={valueWithoutScheme}
+                onChange={onFieldChange}
+            />
+        </FormGroup>
+    );
+};
 
 UrlField.propTypes = propTypes;
 UrlField.defaultProps = defaultProps;

@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://panneau.dev/schemas/resources/resource.json",
+    "title": "Resource definition",
+    "description": "Definition for a resource",
+    "type": "object",
+
+    "anyOf": [
+        {
+            "$ref": "typed.json"
+        },
+        {
+            "$ref": "base.json",
+            "properties": {
+                "forms": {
+                    "description": "The resource forms definition",
+                    "$ref": "../forms.json"
+                }
+            }
+        }
+    ]
+}

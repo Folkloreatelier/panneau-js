@@ -24,21 +24,14 @@
 
         "lists": {
             "description": "The resource lists definition",
-            "$ref": "list.json",
-            "patternProperties": {
-                "^(index)$": {
-                    "$ref": "list.json"
-                }
-            }
+            "$ref": "lists.json"
         },
 
         "forms": {
             "description": "The resource forms definition",
-            "$ref": "form.json",
-            "patternProperties": {
-                "^(create|edit)$": {
-                    "$ref": "form.json"
-                }
+            "$ref": "forms.json",
+            "additionalProperties": {
+                "$ref": "forms.json"
             }
         },
 
